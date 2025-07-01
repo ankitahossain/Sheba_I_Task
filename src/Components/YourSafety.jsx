@@ -21,9 +21,9 @@ const YourSafety = () => {
 
         {/*============== left image====================== */}
         <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1">
-          <img 
-            src={safety} 
-            alt="Your Safety" 
+          <img
+            src={safety}
+            alt="Your Safety"
             className="w-full max-w-lg h-auto object-contain rounded-xl shadow-lg"
           />
         </div>
@@ -31,7 +31,7 @@ const YourSafety = () => {
         {/* ==================right content==================*/}
         <div className="w-full lg:w-1/2 bg-saftey_color rounded-2xl shadow-xl p-6 lg:p-8 flex flex-col justify-between order-1 lg:order-2">
 
-       
+
           <div>
             <p className="font-lato text-[14px] font-normal leading-[17px] text-black mb-2">
               WHY CHOOSE Us
@@ -56,9 +56,8 @@ const YourSafety = () => {
                 >
                   <span className="text-[15px] sm:text-base">{item.question}</span>
                   <svg
-                    className={`w-4 h-4 transform transition-transform duration-300 ${
-                      open === item.id ? "rotate-180" : ""
-                    }`}
+                    className={`w-4 h-4 transform transition-transform duration-300 ${open === item.id ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -67,9 +66,8 @@ const YourSafety = () => {
                   </svg>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    open === item.id ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${open === item.id ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                    }`}
                 >
                   <div className="py-3 text-gray-600 font-light text-[15px]">
                     {item.answer}

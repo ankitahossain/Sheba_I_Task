@@ -3,6 +3,7 @@
 :root {
   --font-inter: "Inter", sans-serif;
   --font-lato: "Lato", sans-serif;
+  --font-roboto:"Roboto", sans-serif;
   --font-open-sans: "Open Sans", sans-serif;
   --color-black_color: #1E1E1E;
   --color-white_color: #FFFFFF;
@@ -16,6 +17,7 @@
 @theme{
   --font-font-open-sans:var(font-open-sans);
   --font-font-lato:var(font-lato);
+  --font-roboto:var(font-roboto);
   --font-font-inter:var(font-inter);
   --color-black_color:var(black_color);
   --color-white_color:var(white_color);
@@ -52,6 +54,14 @@
     color: var(--color-hover_color);
   }
 
+  .footer_item {
+    position: relative;
+    color: var(--color-white_color);
+    transition: all linear 0.2s;
+  }
+  .footer_item:hover {
+    color: var(--color-hover_color);
+  }
   .btn {
     position: relative;
     overflow: hidden;

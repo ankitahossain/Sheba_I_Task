@@ -9,6 +9,8 @@ import Gallery from './Components/Gallery'
 import YourSafety from './Components/YourSafety'
 import Works from './Components/Works'
 import Feedback from './Components/Feedback'
+import Service from './Components/Service'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
       <YourSafety/>
       <Works/>
       <Feedback/>
+      <Service/>
+      <Footer/>
     </div>
   )
 }
