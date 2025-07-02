@@ -26,7 +26,7 @@ const Feedback = () => {
           </div>
 
           {/* Main Feedback Card */}
-          <div className='bg-white max-w-[754px] rounded-xl h-[326px] flex justify-between items-center gap-4 shadow px-6 py-4'>
+          <div className='bg-white max-w-[754px]  h-[326px] flex justify-between items-center gap-4  px-6 py-4 rounded-lg shadow-xl border-2 border-purple-500'>
             <div className='w-[250px] h-[250px]'>
               <img src={client_2} alt="client_2" className='w-full h-full object-cover' />
             </div>

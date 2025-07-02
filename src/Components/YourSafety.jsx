@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import safety from '../assets/Images/safety.png';
+import {memo} from 'react'
 
 const YourSafety = () => {
   const [open, setOpen] = useState(null);
@@ -83,4 +84,4 @@ const YourSafety = () => {
   );
 };
 
-export default YourSafety;
+export default memo(YourSafety);

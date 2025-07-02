@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../assets/Images/logo.svg'
+import {memo} from 'react'
 import Button from './Button'
 
 const Navbar = () => {
@@ -36,4 +37,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default memo(Navbar);

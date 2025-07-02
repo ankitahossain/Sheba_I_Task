@@ -44,7 +44,7 @@ const Categories = () => {
 
             <div className='mt-8 grid grid-cols-3 md:grid-cols-6 gap-4 max-w-6xl mx-auto'>
                 {category.map((item) => (
-                    <div key={item.id} className='flex justify-center items-center'>
+                    <div key={item.id} className='flex justify-center items-center rounded-lg shadow-md hover:shadow-xl cursor-pointer hover:border-2 hover:border-purple-400 transition-all duration-300'>
                         <img
                             src={item.image}
                             alt={`Category ${item.id}`}

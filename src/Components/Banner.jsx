@@ -1,4 +1,5 @@
 import React from 'react'
+import {memo} from 'react'
 import Button from '../Components/Button';
 import image_1 from '../assets/Images/image_1.png'
 import image_2 from '../assets/Images/image_2.png'
@@ -29,23 +30,23 @@ const Banner = () => {
             </p>
 
             <div className='flex gap-4 pt-8 flex-wrap'>
-              <button
-                type="button"
-                className="text-gray-900 bg-white hover:bg-[#130b0b82] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center btn"
-              >
-                <IoLocationOutline className="me-2" />
-                <span>Location</span>
-              </button>
+  <button
+    type="button"
+    className="text-gray-900 bg-white font-medium rounded-lg cursor-pointer text-sm px-5 py-2.5 inline-flex items-center "
+  >
+    <IoLocationOutline className="me-2" />
+    <span>Location</span>
+  </button>
 
-              <button
-                type="button"
-                className="text-gray-900 bg-white hover:bg-[#130b0b82]/80 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center btn"
-              >
-                <span className="me-10">Service Search...</span>
-                <IoSearch className="bg-black text-white_color rounded p-1" />
-              </button>
-            </div>
-        
+  <button
+    type="button"
+    className="text-gray-900 bg-white font-medium rounded-lg cursor-pointer text-sm px-5 py-2.5 inline-flex items-center "
+  >
+    <span className="me-10">Service Search...</span>
+    <IoSearch className="bg-black text-white_color rounded p-1" />
+  </button>
+</div>
+
             <div className='pt-6 flex gap-3 flex-wrap mt-4'>
               <span className='font-inter font-medium text-[16px] text-white_color '>Popular Searches :   
                   <button className='bg-black_color text-white_color font-open-sans text-[16px] py-2 px-5 rounded-3xl btn ml-4'>
@@ -88,4 +89,4 @@ const Banner = () => {
   )
 }
 
-export default Banner;
+export default memo(Banner);

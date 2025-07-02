@@ -14,7 +14,7 @@ function SampleNextArrow(props) {
       className="nextArrow absolute top-1/2 right-2 transform -translate-y-1/2 z-10 cursor-pointer"
       onClick={onClick}
     >
-      <IoIosArrowForward size={32} className="text-white bg-black_color rounded-full p-1" />
+      <IoIosArrowForward size={32} className="text-white bg-hover_color rounded-full p-2" />
     </div>
   );
 }
@@ -26,7 +26,7 @@ function SamplePrevArrow(props) {
       className="prevArrow absolute top-1/2 left-2 transform -translate-y-1/2 z-10 cursor-pointer"
       onClick={onClick}
     >
-      <IoIosArrowBack size={32} className="text-white bg-black_color rounded-full p-1" />
+      <IoIosArrowBack size={32} className="text-white bg-hover_color rounded-full p-2" />
     </div>
   );
 }
@@ -64,7 +64,7 @@ const YourHome = () => {
                 <img
                   src={data.img}
                   alt="home"
-                  className="w-full h-[320px] object-cover rounded-lg"
+                  className=" w-[94%] h-[290px] object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-14">
                   <Button

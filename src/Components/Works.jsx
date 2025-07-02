@@ -1,4 +1,5 @@
 import React from 'react'
+import {memo} from 'react'
 import Work_1 from '../assets/Images/Work-1.png'
 import Work_2 from '../assets/Images/Work-2.png'
 import Work_3 from '../assets/Images/Work-3.png'
@@ -210,4 +211,4 @@ const Works = () => {
   )
 }
 
-export default Works
+export default memo(Works)

@@ -1,5 +1,6 @@
 import React from 'react'
 import logo_1 from '../assets/Images/logo_1.svg'
+import {memo} from 'react'
 
 const Footer = () => {
     const item = [
@@ -84,4 +85,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default memo(Footer);

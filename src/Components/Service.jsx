@@ -18,32 +18,58 @@ const Service = () => {
                             <p className='font-font-open-sans font-regular text-[16px] text-font_color'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some.</p>
             <div className='flex justify-between items-center mr-[36%] gap-2 mt-6'>
                                
-                           <button type="button" class="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#050708]/40 dark:focus:ring-gray-600 me-2 mb-2 ">
-<svg class="w-5 h-5 me-2 -ms-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
-<div className="flex flex-col">
-    <span className='font-roboto font-regular text-[10px] text-white_color'>Download on the</span>
-    <span className='font-roboto font-regular text-[20px] text-white_color'>App Store</span>
-  </div>
-</button>
-<button
-  type="button"
-  className="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
->
-  <svg xmlns="http://www.w3.org/2000/svg" 
-       viewBox="0 0 16 16" 
-       fill="currentColor" 
-       className="w-5 h-5 me-2 -ms-1">
-    <path d="M14.222 7.655 3.234.204a.678.678 0 0 0-.706-.02.678.678 0 0 0-.347.592v14.448c0 .243.132.466.347.592a.678.678 0 0 0 .706-.02l10.988-7.451a.678.678 0 0 0 0-1.19zM2.5 14.087V1.913L10.972 8 2.5 14.087z"/>
-  </svg>
-  <div className="flex flex-col">
-    <span className="font-roboto font-regular text-[10px] text-white_color">
-      GET IT ON
-    </span>
-    <span className="font-roboto font-regular text-[20px] text-white_color">
-      Google Play
-    </span>
-  </div>
-</button>
+   {/* Buttons */}
+<div className="flex flex-row gap-4 justify-center items-center mt-4 mr-9">
+  {/* App Store Button */}
+  <button
+    type="button"
+    className="flex items-center px-4 py-2 bg-black hover:bg-[#222] text-white rounded-lg transition duration-200"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="28"
+      height="28"
+      fill="#fff"
+      className="inline mr-2"
+      viewBox="0 0 22.773 22.773"
+    >
+      <path d="M15.769 0h.162c.13 1.606-.483 2.806-1.228 3.675-.731.863-1.732 1.7-3.351 1.573-.108-1.583.506-2.694 1.25-3.561C13.292.879 14.557.16 15.769 0zm4.901 16.716v.045c-.455 1.378-1.104 2.559-1.896 3.655-.723.995-1.609 2.334-3.191 2.334-1.367 0-2.275-.879-3.676-.903-1.482-.024-2.297.735-3.652.926h-.462c-.995-.144-1.798-.932-2.383-1.642-1.725-2.098-3.058-4.808-3.306-8.276v-1.019c.105-2.482 1.311-4.5 2.914-5.478.846-.52 2.009-.963 3.304-.765.555.086 1.122.276 1.619.464.471.181 1.06.502 1.618.485.378-.011.754-.208 1.135-.347 1.116-.403 2.21-.865 3.652-.648 1.733.262 2.963 1.032 3.723 2.22-1.466.933-2.625 2.339-2.427 4.74.176 2.181 1.444 3.457 3.028 4.209z" />
+    </svg>
+    <div className="text-left">
+      <p className="text-[10px] font-medium leading-none">Download on the</p>
+      <span className="text-sm font-semibold">App Store</span>
+    </div>
+  </button>
+
+  {/* Google Play Button */}
+  <button
+    type="button"
+    className="flex items-center px-4 py-2 bg-black hover:bg-[#222] text-white rounded-lg transition duration-200"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="28"
+      height="28"
+      fill="#fff"
+      className="mr-2"
+      viewBox="0 0 64 64"
+    >
+      <path fill="#57cef3" d="M7 3v58l33-29z" />
+      <path fill="#fff200" d="m36 32 8-10 15 10-15 10z" />
+      <path fill="#48ff48" d="M36 32 7 3h4l34 20z" />
+      <path fill="#ff6c58" d="M36 32 7 61h4l34-20z" />
+      <path fill="#f33" d="M9.1 64c-1.9 0-3.6-1-4.5-2.6L8 58.2v.7c0 .3.1.6.3.8L24 44c7.4 0 14.1-1.2 18.3-3.1l5.8-3.4v4.6L11.7 63.3c-.7.5-1.6.7-2.6.7z" />
+      <path fill="#0779e4" d="M9.1 4C8.5 4 8 4.5 8 5.1V36c0 4.4 7.2 8 16 8L5.5 62.5c-.9-.9-1.5-2.2-1.5-3.6V5.1C4 2.3 6.3 0 9.1 0z" />
+      <path fill="#314a52" d="M8.3 4.3c.2-.2.5-.3.8-.3.2 0 .4.1.6.2l45.5 26.6c.5.2.8.7.8 1.2s-.3 1-.7 1.3l-11.4 6.6 2.9 2.9 10.4-6.1c1.7-1 2.7-2.8 2.7-4.7s-1-3.8-2.7-4.7L11.7.7C11 .2 10.1 0 9.1 0 7.7 0 6.4.6 5.5 1.5z" />
+    </svg>
+    <div className="text-left">
+      <p className="text-[10px] font-medium leading-none">Get it on</p>
+      <span className="text-sm font-semibold">Google Play</span>
+    </div>
+  </button>
+</div>
+
+
 
 
 
