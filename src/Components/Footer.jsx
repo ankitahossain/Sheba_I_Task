@@ -1,6 +1,6 @@
 import React from 'react'
 import logo_1 from '../assets/Images/logo_1.svg'
-import {memo} from 'react'
+import { memo } from 'react'
 
 const Footer = () => {
     const item = [
@@ -16,18 +16,20 @@ const Footer = () => {
         <div className='px-3 py-6 bg-banner_color'>
             <div className='px-4 py-6'>
 
-                <div className='flex flex-col items-start gap-6 ml-[4%]'>
+                <div className='flex flex-col items-start gap-6 ml-[4%] max-w-full'>
                     <div>
                         <img src={logo_1} alt="logo_1" className='h-12 w-auto' />
                     </div>
+
+                    {/* Keep design text exactly as before: fixed width */}
                     <p className='font-font-open-sans font-regular text-[16px] text-white_color w-[320px]'>
                         Design amazing digital experiences that create more happy in the world.
                     </p>
 
-                    <ul className='flex items-center gap-x-[32px]'>
+                    <ul className='flex flex-wrap items-center gap-x-[32px] gap-y-2'>
                         {item.map((item) => (
                             <li key={item.id}>
-                                <a href="#" className='footer_item font-inter font-semibold text-[20px] capitalize'>
+                                <a href="#" className='footer_item font-inter font-semibold text-[20px] capitalize whitespace-nowrap'>
                                     {item.name}
                                 </a>
                             </li>
@@ -39,13 +41,13 @@ const Footer = () => {
                 </div>
 
                 {/* footer bottom part */}
-                <div className='flex justify-between items-center mt-6 ml-[4%] mr-[4%]'>
+                <div className='flex flex-col sm:flex-row justify-between items-center mt-6 mx-[4%] gap-4 sm:gap-0'>
 
-                    <p className='text-white_color font-normal'>
+                    <p className='text-white_color font-normal text-center sm:text-left'>
                         © 2024 AI DETECT. <span className="font-main">All rights reserved.</span>
                     </p>
 
-                    <div className="flex">
+                    <div>
                         <ul className="flex space-x-4">
                             <li>
                                 <a href="javascript:void(0)" className="block hover:opacity-80 transition-opacity" aria-label="Twitter">
@@ -85,4 +87,4 @@ const Footer = () => {
     )
 }
 
-export default memo(Footer);
+export default memo(Footer)

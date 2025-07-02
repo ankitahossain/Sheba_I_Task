@@ -33,13 +33,16 @@ const Gallery = () => {
   };
 
   const getImageStyle = (index) => {
+    // Responsive breakpoints
+    const isMobile = window.innerWidth < 640;
+    const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
     const base = {
       position: "absolute",
       top: "50%",
       transform: "translateY(-50%)",
       transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-      borderRadius: "24px",
-      boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+      borderRadius: isMobile ? "12px" : "24px",
+      boxShadow: isMobile ? "0 4px 16px rgba(0,0,0,0.10)" : "0 8px 32px rgba(0,0,0,0.12)",
       cursor: index !== activeIndex ? "pointer" : "default",
       overflow: "hidden",
       zIndex: 1,
@@ -51,6 +54,65 @@ const Gallery = () => {
     if (rel < -Math.floor(total / 2)) rel += total;
     if (rel > Math.floor(total / 2)) rel -= total;
 
+    // Mobile layout: stack images vertically, only show active
+    if (isMobile) {
+      if (rel === 0) {
+        return {
+          ...base,
+          width: "90vw",
+          maxWidth: "320px",
+          height: "220px",
+          left: "50%",
+          transform: "translate(-50%, -50%) scale(1)",
+          zIndex: 3,
+          opacity: 1,
+          boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+        };
+      }
+      return { display: "none" };
+    }
+
+    // Tablet layout: smaller images, less overlap
+    if (isTablet) {
+      if (rel === -1 || rel === 4) {
+        return {
+          ...base,
+          width: "120px",
+          height: "180px",
+          left: "5%",
+          transform: "translateY(-50%) scale(0.85)",
+          zIndex: 2,
+          opacity: 0.7,
+        };
+      }
+      if (rel === 0) {
+        return {
+          ...base,
+          width: "200px",
+          height: "280px",
+          left: "50%",
+          transform: "translate(-50%, -50%) scale(1)",
+          zIndex: 3,
+          opacity: 1,
+          boxShadow: "0 12px 48px rgba(0,0,0,0.18)",
+        };
+      }
+      if (rel === 1 || rel === -4) {
+        return {
+          ...base,
+          width: "120px",
+          height: "180px",
+          right: "5%",
+          left: "auto",
+          transform: "translateY(-50%) scale(0.85)",
+          zIndex: 2,
+          opacity: 0.7,
+        };
+      }
+      return { display: "none" };
+    }
+
+    // Desktop (original logic)
     if (rel === -2 || rel === 3) {
       return {
         ...base,
@@ -113,18 +175,18 @@ const Gallery = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-b from-gray-50 to-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">Gallery</h2>
-          <p className="text-lg text-font_color max-w-2xl mx-auto leading-relaxed">
-            Discover tailored categories designed to simplify your search, explore diverse options, 
+    <div className="w-full bg-gradient-to-b from-gray-50 to-white py-10 sm:py-16">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">Gallery</h2>
+          <p className="text-sm sm:text-lg text-font_color max-w-xs sm:max-w-2xl mx-auto leading-relaxed">
+            Discover tailored categories designed to simplify your search, explore diverse options,
             and find exactly what you need effortlessly
           </p>
         </div>
 
         <div className="relative w-full max-w-6xl mx-auto">
-          <div className="relative h-[460px] overflow-hidden">
+          <div className="relative h-[240px] sm:h-[340px] md:h-[460px] overflow-hidden">
             {gallery.map((item, index) => (
               <div
                 key={item.id}
@@ -141,39 +203,37 @@ const Gallery = () => {
               </div>
             ))}
 
+            {/* Navigation Buttons - hide on mobile */}
             <button
               onClick={prevSlide}
-              className="absolute left-8 top-1/2 -translate-y-1/2 z-20 
-              bg-white p-4 rounded-full shadow-xl hover:scale-110 transition"
+              className="hidden sm:flex absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 bg-white p-3 sm:p-4 rounded-full shadow-xl hover:scale-110 transition"
               aria-label="Previous"
             >
-              <FiChevronLeft className="w-6 h-6 text-gray-700" />
+              <FiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-8 top-1/2 -translate-y-1/2 z-20 
-              bg-white p-4 rounded-full shadow-xl hover:scale-110 transition"
+              className="hidden sm:flex absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-20 bg-white p-3 sm:p-4 rounded-full shadow-xl hover:scale-110 transition"
               aria-label="Next"
-            ><FiChevronRight className="w-6 h-6 text-gray-700" />
+            ><FiChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
             </button>
           </div>
 
-          <div className="flex justify-center mt-8 space-x-3">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2 sm:space-x-3">
             {gallery.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === activeIndex
-                    ? "bg-teal-500 scale-125 shadow-lg"
-                    : "bg-gray-300 hover:bg-gray-400 hover:scale-110"
-                }`}
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === activeIndex
+                  ? "bg-teal-500 scale-110 sm:scale-125 shadow-lg"
+                  : "bg-gray-300 hover:bg-gray-400 hover:scale-110"
+                  }`}
                 aria-label={`Go to image ${index + 1}`}
               />
             ))}
           </div>
 
-          <div className="text-center mt-6 text-gray-500 font-medium">
+          <div className="text-center mt-4 sm:mt-6 text-gray-500 font-medium text-sm sm:text-base">
             {activeIndex + 1} / {gallery.length}
           </div>
         </div>

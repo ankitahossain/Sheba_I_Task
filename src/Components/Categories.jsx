@@ -31,33 +31,38 @@ const Categories = () => {
     ];
 
     return (
-        <div className='px-4 py-8 bg-white mt-17'>
-            <div className='max-w-6xl mx-auto text-center space-y-4'>
-                <p className='font-lato font-bold text-3xl md:text-4xl text-black'>
+        <div className="px-2 sm:px-4 py-8 bg-white mt-17">
+            <div className="max-w-6xl mx-auto text-center space-y-4">
+                <p className="font-lato font-bold text-2xl sm:text-3xl md:text-4xl text-black">
                     Explore Our Categories
                 </p>
-                <p className="font-open-sans text-base md:text-lg text-font_color max-w-2xl mx-auto">
+                <p className="font-open-sans text-sm sm:text-base md:text-lg text-font_color max-w-2xl mx-auto">
                     Discover tailored categories designed to simplify your search,
                     explore diverse options, and find exactly what you need effortlessly.
                 </p>
             </div>
 
-            <div className='mt-8 grid grid-cols-3 md:grid-cols-6 gap-4 max-w-6xl mx-auto'>
+            <div
+                className="mt-8 grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 sm:gap-4 max-w-6xl mx-auto"
+            >
                 {category.map((item) => (
-                    <div key={item.id} className='flex justify-center items-center rounded-lg shadow-md hover:shadow-xl cursor-pointer hover:border-2 hover:border-purple-400 transition-all duration-300'>
+                    <div
+                        key={item.id}
+                        className="flex justify-center items-center rounded-lg shadow-md hover:shadow-xl cursor-pointer hover:border-2 hover:border-purple-400 transition-all duration-300 bg-white min-h-[80px] sm:min-h-[100px]"
+                    >
                         <img
                             src={item.image}
                             alt={`Category ${item.id}`}
-                            className='w-full h-full object-contain'
+                            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
                         />
                     </div>
                 ))}
             </div>
 
-            <div className='mt-8 text-center'>
+            <div className="mt-8 text-center">
                 <Button
                     btnContent="View More"
-                    btnDesign="bg-black font-bold font-nunito text-white text-[20px] px-9 py-2 rounded-lg btn"
+                    btnDesign="bg-black font-bold font-nunito text-white text-base sm:text-lg md:text-[20px] px-6 sm:px-9 py-2 rounded-lg btn"
                 />
             </div>
         </div>
