@@ -1,10 +1,10 @@
 import React, { useState, useEffect, memo } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import img_1 from "../assets/images/gallery_1.png";
-import img_2 from "../assets/images/gallery_2.png";
-import img_3 from "../assets/images/gallery_3.png";
-import img_4 from "../assets/images/gallery_4.png";
-import img_5 from "../assets/images/gallery_5.png";
+import img_1 from "../assets/Images/gallery_1.png"
+import img_2 from "../assets/Images/gallery_2.png";
+import img_3 from "../assets/Images/gallery_3.png";
+import img_4 from "../assets/Images/gallery_4.png";
+import img_5 from "../assets/Images/gallery_5.png";
 
 const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(2);
