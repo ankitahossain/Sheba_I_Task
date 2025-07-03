@@ -1,6 +1,7 @@
 import React from 'react'
-import logo_1 from '../assets/Images/logo_1.svg'
 import { memo } from 'react'
+import logo_1 from '../assets/images/logo_1.svg'
+
 
 const Footer = () => {
     const item = [
