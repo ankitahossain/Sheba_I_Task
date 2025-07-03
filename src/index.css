@@ -82,16 +82,16 @@
     visibility: visible;
   }
 
-  .bgBanner {
-    position: relative;
-    z-index: 1;
-  }
-  .bgBanner::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-banner_color);
-    z-index: -1;
-  }
+.bgBanner {
+  position: relative;
+  z-index: 1;
+}
+
+.bgBanner::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-banner_color);
+  z-index: -1;
 }
