@@ -12,7 +12,7 @@ const Service = () => {
 
           {/*  Left Content Wrapper  */}
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-4 absolute top-0 left-0 w-full h-full px-2 sm:px-0 py-4 md:py-0">
-            
+
             <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-[46%] md:ml-[6%] bg-white/80 md:bg-transparent rounded-lg p-3 md:p-0">
               <h1 className="font-lato font-bold text-2xl sm:text-3xl md:text-[48px] text-black_color text-center md:text-left">
                 Get your service from our app

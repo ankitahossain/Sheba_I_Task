@@ -29,7 +29,7 @@ const Works = () => {
         </div>
         {/* Cards container */}
         <div className="relative z-10 flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-x-24 mt-10 sm:mt-20 flex-wrap">
-          {/* Left column */}
+         
           <div className="flex flex-col gap-8 sm:gap-16 lg:gap-36 items-center w-full lg:w-auto">
             {/* Card 1 */}
             <div className="w-full max-w-xs sm:max-w-md md:w-[426px] h-auto sm:h-[286px] flex flex-col justify-center items-center gap-4 rounded-2xl bg-white_color shadow-xl lg:mr-[58%] p-4">
