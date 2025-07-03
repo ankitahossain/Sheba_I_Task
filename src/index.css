@@ -1,110 +1,97 @@
-/* Tailwind v4 syntax - no @tailwind directives needed */
 @import "tailwindcss";
 
-/* Custom CSS variables */
 :root {
   --font-inter: "Inter", sans-serif;
   --font-lato: "Lato", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
+  --font-roboto:"Roboto", sans-serif;
   --font-open-sans: "Open Sans", sans-serif;
   --color-black_color: #1E1E1E;
   --color-white_color: #FFFFFF;
   --color-hover_color: #124544;
   --color-banner_color: #28A69F;
   --color-font_color: #000000;
-  --color-gray_color: #727e89;
-  --color-bg_color: #f5f5f5;
+  --color-gray_color:#727e89;
+  --color-bg_color:#f5f5f5;
 }
 
-/* Custom theme configuration for Tailwind v4 */
-@theme {
-  --font-family-inter: var(--font-inter);
-  --font-family-lato: var(--font-lato);
-  --font-family-roboto: var(--font-roboto);
-  --font-family-open-sans: var(--font-open-sans);
-  
-  --color-black-custom: var(--color-black_color);
-  --color-white-custom: var(--color-white_color);
-  --color-hover-custom: var(--color-hover_color);
-  --color-banner-custom: var(--color-banner_color);
-  --color-font-custom: var(--color-font_color);
-  --color-gray-custom: var(--color-gray_color);
-  --color-bg-custom: var(--color-bg_color);
+@theme{
+  --font-font-open-sans:var(font-open-sans);
+  --font-font-lato:var(font-lato);
+  --font-roboto:var(font-roboto);
+  --font-font-inter:var(font-inter);
+  --color-black_color:var(black_color);
+  --color-white_color:var(white_color);
+  --color-hover_color:var(hover_color);
+  --color-banner_color:var(banner_color);
+  --color-font_color:var(font_color);
+  --color-gray_color:var(gray_color);
+  --color-bg_color:var(-bg_color);
+
 }
 
-/* Base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  ul, li, ol {
+    @apply list-none;
+  }
+  img {
+    @apply align-middle;
+  }
+  a {
+    @apply inline-block no-underline;
+  }
 }
 
-ul, li, ol {
-  list-style: none;
-}
+@layer components {
+  .menu {
+    position: relative;
+    color: var(--color-black_color);
+    transition: all linear 0.2s;
+  }
+  .menu:hover {
+    color: var(--color-hover_color);
+  }
 
-img {
-  vertical-align: middle;
-}
+  .footer_item {
+    position: relative;
+    color: var(--color-white_color);
+    transition: all linear 0.2s;
+  }
+  .footer_item:hover {
+    color: var(--color-hover_color);
+  }
+  .btn {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #130b0b82;
+    top: 0;
+    left: 100%;
+    visibility: hidden;
+    transition: all linear 0.2s;
+  }
+  .btn:hover::after {
+    left: 0;
+    visibility: visible;
+  }
 
-a {
-  display: inline-block;
-  text-decoration: none;
-}
-
-/* Custom component styles */
-.menu {
-  position: relative;
-  color: var(--color-black_color);
-  transition: all linear 0.2s;
-}
-
-.menu:hover {
-  color: var(--color-hover_color);
-}
-
-.footer_item {
-  position: relative;
-  color: var(--color-white_color);
-  transition: all linear 0.2s;
-}
-
-.footer_item:hover {
-  color: var(--color-hover_color);
-}
-
-.btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #130b0b82;
-  top: 0;
-  left: 100%;
-  visibility: hidden;
-  transition: all linear 0.2s;
-}
-
-.btn:hover::after {
-  left: 0;
-  visibility: visible;
-}
-
-.bgBanner {
-  position: relative;
-  z-index: 1;
-}
-
-.bgBanner::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-banner_color);
-  z-index: -1;
+  .bgBanner {
+    position: relative;
+    z-index: 1;
+  }
+  .bgBanner::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-banner_color);
+    z-index: -1;
+  }
 }
