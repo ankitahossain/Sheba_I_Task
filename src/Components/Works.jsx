@@ -70,7 +70,7 @@ const Works = () => {
         </div>
 
 
-        {/* Arrows (show only on large screens) */}
+        {/* Arrows */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 800 800"

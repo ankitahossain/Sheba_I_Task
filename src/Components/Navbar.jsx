@@ -12,7 +12,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="py-3 sm:py-4 bg-white w-full shadow-sm">
+        <nav className="py-3 sm:py-4 bg-white w-full">
             <div className="flex flex-wrap sm:flex-nowrap justify-between items-center px-3 sm:px-7 md:pl-20 md:pr-20 py-2">
                 <picture>
                     <img src={logo} alt="logo" className="h-10 sm:h-12 w-auto" />
@@ -29,7 +29,7 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                {/* Mobile Menu Button */}
+               
                 <div className="md:hidden ml-auto">
                     <button type="button" className="text-black focus:outline-none" aria-label="Open menu">
                         <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -45,24 +45,7 @@ const Navbar = () => {
                     />
                 </div>
             </div>
-            {/* Mobile Menu Dropdown (hidden by default, needs JS for toggle) */}
-            {/*
-            <div className="md:hidden px-3 pb-3">
-                <ul className="flex flex-col gap-y-2">
-                    {menuitem.map((item) => (
-                        <li key={item.id}>
-                            <a href="#" className="menu font-inter font-semibold text-[16px] capitalize block py-2">
-                                {item.name}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-                <Button
-                    btnContent="Log in"
-                    btnDesign="bg-black font-bold font-nunito text-white text-[16px] px-5 py-2 rounded-lg btn w-full mt-2"
-                />
-            </div>
-            */}
+           
         </nav>
     );
 };

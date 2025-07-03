@@ -22,7 +22,7 @@ const Footer = () => {
                         <img src={logo_1} alt="logo_1" className='h-12 w-auto' />
                     </div>
 
-                    {/* Keep design text exactly as before: fixed width */}
+
                     <p className='font-font-open-sans font-regular text-[16px] text-white_color w-[320px]'>
                         Design amazing digital experiences that create more happy in the world.
                     </p>
@@ -37,12 +37,12 @@ const Footer = () => {
                         ))}
                     </ul>
 
-                    {/* Shorter horizontal line */}
+                    {/* horizontal line */}
                     <div className='w-[96%] h-[2px] bg-white'></div>
                 </div>
 
                 {/* footer bottom part */}
-                <div className='flex flex-col sm:flex-row justify-between items-center mt-6 mx-[4%] gap-4 sm:gap-0'>
+                <div className='flex flex-col sm:flex-row justify-between items-center mt-4 mx-[4%] gap-4 sm:gap-0'>
 
                     <p className='text-white_color font-normal text-center sm:text-left'>
                         © 2024 AI DETECT. <span className="font-main">All rights reserved.</span>

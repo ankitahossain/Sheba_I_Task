@@ -203,7 +203,6 @@ const Gallery = () => {
               </div>
             ))}
 
-            {/* Navigation Buttons - hide on mobile */}
             <button
               onClick={prevSlide}
               className="hidden sm:flex absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 bg-white p-3 sm:p-4 rounded-full shadow-xl hover:scale-110 transition"
