@@ -10,7 +10,7 @@ import { IoLocationOutline, IoSearch } from "react-icons/io5";
 
 const Banner = () => {
   return (
-    <div className=" ">
+    <div >
       <div className="bgBanner px-4 py-2 mr-22 ml-16 rounded-lg  relative">
         {/*banner image */}
         <div>
